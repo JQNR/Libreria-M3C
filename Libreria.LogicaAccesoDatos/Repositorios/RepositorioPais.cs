@@ -35,7 +35,9 @@ namespace Libreria.LogicaAccesoDatos.Repositorios
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+           Pais aEliminar = _context.Paises.Find(id);
+            _context.Paises.Remove(aEliminar);
+            _context.SaveChanges();
         }
 
         public void Update(Pais obj)

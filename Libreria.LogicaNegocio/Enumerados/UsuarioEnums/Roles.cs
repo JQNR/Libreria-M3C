@@ -8,7 +8,7 @@ namespace Libreria.LogicaNegocio.Enumerados.UsuarioEnums
 {
     public enum Roles
     {
-        Empleado,
+        Administrador,
         Cliente
     }
 }

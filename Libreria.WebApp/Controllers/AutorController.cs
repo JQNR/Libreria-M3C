@@ -1,6 +1,7 @@
 ﻿using Libreria.DTOs.DTOs.DTOsPais;
 using Libreria.LogicaAplicacion.ICasosUso.ICUAltaAutor;
 using Libreria.LogicaAplicacion.ICasosUso.ICUPais;
+using Libreria.WebApp.Filtros;
 using Libreria.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,8 +23,11 @@ namespace Libreria.WebApp.Controllers
             return View();
         }
 
-        public IActionResult Create() {
 
+        [AdminAuthorize]
+        [HttpGet]
+        public IActionResult Create() {
+        
             List<DTOPais> paises = _cuObtenerPaises.ObtenerPaises();
             AltaAutorViewModel model = new AltaAutorViewModel();
 
